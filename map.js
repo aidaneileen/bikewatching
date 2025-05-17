@@ -179,7 +179,14 @@ circles = svg
     isFinite(d.departures / d.totalTraffic)
       ? stationFlow(d.departures / d.totalTraffic)
       : 0.5
-  );
+  )
+  .each(function (d) {
+    d3.select(this).select('title')?.remove();
+
+    d3.select(this)
+      .append('title')
+      .text(`${d.totalTraffic} trips (${d.departures} departures, ${d.arrivals} arrivals)`);
+  });
   }
 
   function updateTimeDisplay() {

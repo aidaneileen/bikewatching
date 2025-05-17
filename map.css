@@ -37,6 +37,7 @@ body {
   );
   fill: var(--color);
   background-color: var(--color);
+  pointer-events: auto;
 }
 /* Legend container */
 .legend {
